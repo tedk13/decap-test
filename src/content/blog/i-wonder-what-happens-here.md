@@ -1,5 +1,4 @@
 ---
-layout: BlogPost
 title: I wonder what happens here?
 pubDate: 2024-07-22T15:21:00.000Z
 description: "This is a test for adding a new blog post. "
