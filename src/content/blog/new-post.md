@@ -1,5 +1,4 @@
 ---
-layout: BlogPost
 title: New Post
 pubDate: 2024-07-22T15:30:00.000Z
 description: "Maybe this one will work. "
