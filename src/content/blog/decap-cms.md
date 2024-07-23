@@ -1,9 +1,8 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Decap CMS
 draft: false
 description: Decap CMS is kinda cool
-pubDate: 2024-07-23T15:13:00.000Z
+pubDate: 'Jul 22 2022'
 heroImage: https://decapcms.org/img/decap-logo-white.svg
 ---
 Stuff. Hello world or whatever.
