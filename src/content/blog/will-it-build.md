@@ -1,5 +1,4 @@
 ---
-layout: BlogPost
 title: Will it build
 pubDate: 2024-07-23T11:41:00.000Z
 description: Please build
