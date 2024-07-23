@@ -1,5 +1,5 @@
 ---
-layout: $/layouts/BLogPost.astro
+layout: ../../layouts/BlogPost.astro
 title: Decap CMS
 draft: false
 description: Decap CMS is kinda cool
