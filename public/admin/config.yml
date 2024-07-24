@@ -1,6 +1,17 @@
+local_backend: true
+
+publish_mode: editorial_workflow
+
 backend:
   name: git-gateway
   branch: master
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
