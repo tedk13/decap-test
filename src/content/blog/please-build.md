@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Please build
 draft: false
 description: "This is a test for adding a new blog post. "
