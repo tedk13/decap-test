@@ -2,6 +2,9 @@ local_backend: true
 
 publish_mode: editorial_workflow
 
+site_url: https://decap-test-rimdev.netlify.app
+display_url: https://decap-test-rimdev.netlify.app
+
 backend:
   name: git-gateway
   branch: master
