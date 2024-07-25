@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPost.astro
 title: First post
 draft: false
 description: Lorem ipsum dolor sit amet
