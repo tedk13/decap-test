@@ -17,14 +17,14 @@ backend:
     openAuthoring: '{{message}}'
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/content/blog" # The path to the folder where the documents are stored
+  - name: "carriers" # Used in routes, e.g., /admin/collections/carriers
+    label: "Carriers" # Used in the UI
+    folder: "src/content/carriers" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     format: frontmatter
-    preview_path: blog/{{slug}}
+    preview_path: carriers/{{slug}}
     fields: # The fields for each document, usually in frontmatter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogPost.astro"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/CarrierLayout.astro"}
       - { label: "Title", name: "title", widget: "string" } 
       - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { label: "Description", name: 'description', widget: "string" }

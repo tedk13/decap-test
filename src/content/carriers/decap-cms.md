@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPost.astro
+layout: ../../layouts/CarrierLayout.astro
 title: Decap CMS
 draft: false
 description: Decap CMS is kinda cool

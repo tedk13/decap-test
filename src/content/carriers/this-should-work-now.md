@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPost.astro
+layout: ../../layouts/CarrierLayout.astro
 title: "This should work now. "
 isDraft: false
 description: "Cats are cool "
