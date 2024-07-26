@@ -9,7 +9,6 @@ import FormattedDate from '../../components/FormattedDate.astro';
 const posts = (await getCollection('carriers')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-console.log(posts)
 ---
 
 <!doctype html>
