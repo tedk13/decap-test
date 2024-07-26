@@ -1,4 +1,6 @@
 ---
+import { boolean } from 'astro/zod';
+
 interface Props {
 	date: Date;
 }
@@ -6,7 +8,7 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
+<time>
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',
