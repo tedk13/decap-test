@@ -24,14 +24,56 @@ collections:
     format: frontmatter
     preview_path: carriers/{{slug}}
     fields: # The fields for each document, usually in frontmatter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/CarrierLayout.astro"}
-      - { label: "Carrier Title", name: "carrierTitle", widget: "string" } 
-      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
-      - { label: "Description", name: 'description', widget: "string" }
-      - { label: "Carrier Logo", name: "carrierLogo", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Administrative Office Mailing Address", name: "adminMailingAddress", widget: "string"}
-      - { label: "Overnight Mailing Address", name: "overnightMailingAddress", widget: "string"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/CarrierLayout.astro", required: false},
+      - { label: "Carrier Title", name: "title", widget: "string" },
+      - { label: "Draft", name: "isDraft", widget: "boolean", required: false, default: false},
+      - {
+          label: "Company Information",
+          name: "companyInformation",
+          widget: "object",
+          fields: 
+            - { label: "Carrier Logo", name: "carrierLogo", widget: "image" },
+            - { 
+                label: "Administrative Office Mailing Address", name: "adminMailingAddress", widget: "object",
+                fields: 
+                  - { label: 'Address Line 1', name: 'addressLine1', widget: 'string' },
+                  - { label: 'Address Line 2', name: 'addressLine2', widget: 'string', required: false },
+              },
+            - { 
+                label: "Overnight Mailing Address", name: "overnightMailingAddress", widget: "object",
+                fields: 
+                  - { label: 'Address Line 1', name: 'addressLine1', widget: 'string' },
+                  - { label: 'Address Line 2', name: 'addressLine2', widget: 'string', required: false },
+              },
+            - {
+                label: 'Broker Support',
+                name: 'brokerSupport',
+                widget: 'object',
+                fields: 
+                  - { label: 'Phone', name: 'phone', widget: 'string' },
+                  - { label: 'Email', name: 'email', widget: 'string' },
+                  - { label: 'Fax', name: 'fax', widget: 'string' },
+              },
+            - {
+                label: 'New Business',
+                name: 'newBusiness',
+                widget: 'object',
+                fields: 
+                  - { label: 'Phone', name: 'phone', widget: 'string' },
+                  - { label: 'Email', name: 'email', widget: 'string' },
+                  - { label: 'Fax', name: 'fax', widget: 'string' },
+              },
+            - {
+                label: 'Policyowner Services/Member Services/Customer Service',
+                name: 'policyOwnerServices',
+                widget: 'object',
+                fields: 
+                  - { label: 'Phone', name: 'phone', widget: 'string' },
+                  - { label: 'Email', name: 'email', widget: 'string' },
+                  - { label: 'Fax', name: 'fax', widget: 'string' },
+              },
+            - { label: "Producer Portal", name: "producerPortal", widget: "string"},
+        },
 
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media
