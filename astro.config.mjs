@@ -18,7 +18,7 @@ export default defineConfig({
 				public_folder: "public/images",
 				publish_mode: "editorial_workflow",
 				site_url: 'https://decap-test-rimdev.netlify.app',
-				display_url: 'https://decap-test-rimdev.netlify.app',
+				display_url: 'Decap CMS Test',
         backend: {
           name: 'git-gateway',
           branch: 'master',
@@ -38,7 +38,7 @@ export default defineConfig({
 						label: 'Carriers',
 						folder: 'src/content/carriers',
 						create: true,
-						delete: true,
+						// delete: true,
 						format: "frontmatter",
 						preview_path: "carriers/{{slug}}",
 						fields: [
