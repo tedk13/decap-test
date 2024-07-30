@@ -27,6 +27,13 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/CarrierLayout.astro", required: false}
       - { label: "Carrier Title", name: "title", widget: "string" }
       - { label: "Draft", name: "isDraft", widget: "boolean", required: false, default: false}
+      - label: "Address"
+        name: "address"
+        widget: "object"
+        collapsed: true
+        fields: 
+          - {label: "Street Address", name: "street", widget: "string"}
+          - {label: "City", name: "city", widget: "string"}
       - label: "Company Information",
         name: "companyInformation",
         widget: "object",
