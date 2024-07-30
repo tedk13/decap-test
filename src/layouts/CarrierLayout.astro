@@ -13,7 +13,7 @@ console.log(frontmatter)
 
 <html lang="en">
 	<head>
-		<BaseHead title={frontmatter.companyInformation.carrierTitle} description={frontmatter.description} />
+		<BaseHead title={frontmatter.title} description={frontmatter.description} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -29,13 +29,6 @@ console.log(frontmatter)
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
@@ -45,12 +38,14 @@ console.log(frontmatter)
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+			.carrier-info + .carrier-info {
+				margin-top: 1rem;
 			}
-			.last-updated-on {
-				font-style: italic;
+			p {
+				margin: 0;
+			}
+			p + p {
+				margin-top: .5rem;
 			}
 		</style>
 	</head>
@@ -62,11 +57,39 @@ console.log(frontmatter)
 				<div class="hero-image">
 					{frontmatter.companyInformation.carrierLogo && <img src={frontmatter.companyInformation.carrierLogo} alt="" />}
 				</div>
-				<div class="prose">
+				<div>
 					<div class="title">
 						<h1>{frontmatter.title}</h1>
-						<hr />
 					</div>
+					<section>
+						<h2>Company Information</h2>
+						<div class="carrier-info">
+							<h3>Administrative Office Mailing Address</h3>
+							<p>{frontmatter.companyInformation.adminMailingAddress.addressLine1}</p>
+							{frontmatter.companyInformation.adminMailingAddress.addressLine2 && (
+								<p>{frontmatter.companyInformation.adminMailingAddress.addressLine2}</p>
+							)}
+						</div>
+						<div class="carrier-info">
+							<h3>Overnight Mailing Address</h3>
+							<p>{frontmatter.companyInformation.overnightMailingAddress.addressLine1}</p>
+							{frontmatter.companyInformation.overnightMailingAddress.addressLine2 && (
+								<p>{frontmatter.companyInformation.overnightMailingAddress.addressLine2}</p>
+							)}
+						</div>
+						<div class="carrier-info">
+							<h3>Broker Support</h3>
+							<p>
+								<strong>Phone: </strong>{frontmatter.companyInformation.brokerSupport.phone}
+							</p>
+							<p>
+								<strong>Email: </strong>{frontmatter.companyInformation.brokerSupport.email}
+							</p>
+							<p>
+								<strong>Fax</strong>{frontmatter.companyInformation.brokerSupport.fax}
+							</p>
+						</div>
+					</section>
 					<slot />
 				</div>
 			</article>
