@@ -12,6 +12,26 @@ export default defineConfig({
 		sitemap(),
 		DecapCMS({
       config: {
+				// Location where files will be stored in the repo
+				media_folder: "public/images", 
+				// The src attribute for uploaded media
+				public_folder: "public/images",
+				publish_mode: "editorial_workflow",
+				site_url: 'https://decap-test-rimdev.netlify.app',
+				display_url: 'https://decap-test-rimdev.netlify.app',
+        backend: {
+          name: 'git-gateway',
+          branch: 'master',
+					commit_messages: {
+						create: 'Create {{collection}} “{{slug}}”',
+						update: 'Update {{collection}} “{{slug}}”',
+						delete: 'Delete {{collection}} “{{slug}}”',
+						uploadMedia: 'Upload “{{path}}”',
+						deleteMedia: 'Delete “{{path}}”',
+						openAuthoring: '{{message}}'
+					}
+        },
+				disableIdentityWidgetInjection: true,
         collections: [
           {
 						name: 'carriers',
@@ -174,26 +194,6 @@ export default defineConfig({
 						],
 					},
         ],
-				// Location where files will be stored in the repo
-				media_folder: "public/images", 
-				// The src attribute for uploaded media
-				public_folder: "public/images",
-				publish_mode: "editorial_workflow",
-				site_url: 'https://decap-test-rimdev.netlify.app',
-				display_url: 'https://decap-test-rimdev.netlify.app',
-        backend: {
-          name: 'git-gateway',
-          branch: 'master',
-					commit_messages: {
-						create: 'Create {{collection}} “{{slug}}”',
-						update: 'Update {{collection}} “{{slug}}”',
-						delete: 'Delete {{collection}} “{{slug}}”',
-						uploadMedia: 'Upload “{{path}}”',
-						deleteMedia: 'Delete “{{path}}”',
-						openAuthoring: '{{message}}'
-					}
-        },
-				disableIdentityWidgetInjection: true
       },
     }),
 	],
