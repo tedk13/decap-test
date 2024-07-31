@@ -28,20 +28,20 @@ collections:
       - { label: "Carrier Title", name: "title", widget: "string" }
       - { label: "Draft", name: "isDraft", widget: "boolean", required: false, default: false}
       - label: "Company Information"
-        name: "companyInformation"
+        name: "companyInfo"
         widget: "object"
         fields: 
           - label: "Carrier Logo"
             name: "carrierLogo"
             widget: "image"
           - label: "Administrative Office Mailing Address"
-            name: "adminMailingAddress"
+            name: "adminMailing"
             widget: "object"
             fields: 
               - { label: 'Address Line 1', name: 'addressLine1', widget: 'string' }
               - { label: 'Address Line 2', name: 'addressLine2', widget: 'string', required: false }
           - label: "Overnight Mailing Address" 
-            name: "overnightMailingAddress"
+            name: "overnightMailing"
             widget: "object"
             fields: 
               - { label: 'Address Line 1', name: 'addressLine1', widget: 'string' }
@@ -69,7 +69,7 @@ collections:
               - { label: 'Fax', name: 'fax', widget: 'string' }
           - { label: "Producer Portal", name: "producerPortal", widget: "string"}
       - label: "Certification Information"
-        name: "certificationInformation"
+        name: "certInfo"
         widget: "object"
         summary: "[Carrier] [Year] Certification"
         fields: 
@@ -88,31 +88,31 @@ collections:
             name: "agentDeadline"
             widget: "string"
           - label: "Is there a Deadline to Complete Certifications for Current Agents to Receive Renewal Commissions?:"
-            name: "agentDeadlineRenewalCommissions"
+            name: "agentDeadlineRenewal"
             widget: "string"
           - label: "Certification Link:" 
             name: "certLink"
             widget: "string"
           - { label: "Certification Reference Materials Available:", name: "certReferenceMaterials", widget: "string"}
-          - { label: "Is AHIP or Other Equivalent Provider Training Required?", name: "equivalentProviderTrainingRequired", widget: "string"}
-          - { label: "What is the Cost of AHIP or Other Equivalent Provider Training?", name: "CostEquivalentProviderTraining", widget: "string"}
-          - { label: "Does Carrier Reimburse for AHIP or Other Equivalent Provider Training?", name: "carrierReimburseEquivalentProviderTraining", widget: "string"}
-          - { label: "Can AHIP or Other Equivalent Provider Training Be Used for Compliance Credit?", name: "equivalentProviderTrainingComplianceCredit", widget: "string"}
-          - { label: "Certification Compliance Modules:", name: "certificationComplianceModules", widget: "string"}
-          - { label: "Certification Product Modules", name: "certificationProductModules", widget: "string"}
+          - { label: "Is AHIP or Other Equivalent Provider Training Required?", name: "providerTrainingRequired", widget: "string"}
+          - { label: "What is the Cost of AHIP or Other Equivalent Provider Training?", name: "providerTrainingCost", widget: "string"}
+          - { label: "Does Carrier Reimburse for AHIP or Other Equivalent Provider Training?", name: "providerTrainingReimburse", widget: "string"}
+          - { label: "Can AHIP or Other Equivalent Provider Training Be Used for Compliance Credit?", name: "providerTrainingComplianceCredit", widget: "string"}
+          - { label: "Certification Compliance Modules:", name: "certComplianceModules", widget: "string"}
+          - { label: "Certification Product Modules", name: "certProductModules", widget: "string"}
           - { label: "Is Face-to-Face Training Required?", name: "faceToFaceTrainingRequired", widget: "string"}
           - { label: "Will Certifying for [Upcoming Certification Year] Allow Me to Sell [Previous Certification Year] Products?", name: "certifyingToSellProducts", widget: "string"}
-          - { label: "Are Additional Steps Required for Those Certifying for the First Time Versus Those Who Are Recertifying?", name: "areAdditionalStepsRequired", widget: "string"}
+          - { label: "Are Additional Steps Required for Those Certifying for the First Time Versus Those Who Are Recertifying?", name: "additionalStepsRequired", widget: "string"}
           - { label: "How Do I Retrieve My Username and Password?", name: "retrieveUsernameAndPassword", widget: "string"}
           - { label: "Who Do I Contact at Carrier to Confirm Certification?", name: "contactCarrierCornfirmCert", widget: "string"}
       - label: "Submitting Business"
         name: "submittingBusiness"
         widget: "object"
         fields:
-          - { label: "Important Information:", name: "importantInformation", widget: "string"}
+          - { label: "Important Information:", name: "importantInfo", widget: "string"}
           - { label: "How to Submit Business with [Carrier Name]:", name: "howToSubmitBusiness", widget: "string"}
           - label: 'Paper Applications'
-            name: 'paperApplications'
+            name: 'paperApps'
             widget: 'object'
             fields: 
               - { label: 'Fax Number', name: 'faxNumber', widget: 'string' }
@@ -122,14 +122,14 @@ collections:
             widget: 'object'
             fields: 
               - { label: 'Website', name: 'website', widget: 'string' }
-              - { label: 'Other Information', name: 'otherInformation', widget: 'string', required: false }
-              - { label: 'Other Information', name: 'otherInformation2', widget: 'string', required: false }
+              - { label: 'Other Information', name: 'otherInfo', widget: 'string', required: false }
+              - { label: 'Other Information', name: 'otherInfo2', widget: 'string', required: false }
           - { label: "Contact for Submitting Business Inquiries", name: "contactForSubmittingBusinessInquiries", widget: "string"}
       - label: "Commissions"
         name: "commissions"
         widget: "object"
         fields: 
-          - { label: "General Information:", name: "generalInformation", widget: "string"}
+          - { label: "General Information:", name: "generalInfo", widget: "string"}
           - { label: "How to Access [Carrier Name] Commission Statements Online:", name: "accessCommissionStatesmentsOnline", widget: "string"}
           - { label: "Contact for Commission-Related Inquiries:", name: "contactForCommissionRelatedInquiries", widget: "string"}
       - label: "Supplies"
