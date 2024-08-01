@@ -1,8 +1,7 @@
 ---
 layout: ../../layouts/CarrierLayout.astro
 title: Odin Health
-companyInformation:
-  carrierTitle: Odin Health
+companyInfo:
   carrierLogo: https://www.shutterstock.com/image-vector/odins-celtic-raven-vector-illustration-260nw-2275435819.jpg
   adminMailingAddress:
     addressLine1: 123 Main Street, NY

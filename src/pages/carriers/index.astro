@@ -92,7 +92,7 @@ const posts = (await getCollection('carriers'));
 						posts.map((post) => (
 							<li>
 								<a href={`/carriers/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.companyInformation.carrierLogo} alt="" />
+									<img width={720} height={360} src={post.data.companyInfo.carrierLogo} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									{/* <p class="date">
 										<FormattedDate date={post.data.pubDate} />
