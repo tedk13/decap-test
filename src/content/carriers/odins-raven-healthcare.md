@@ -3,7 +3,7 @@ layout: ../../layouts/CarrierLayout.astro
 title: Odin's Raven Healthcare
 isDraft: false
 companyInfo:
-  carrierLogo: https://www.shutterstock.com/shutterstock/photos/2275435819/display_1500/stock-vector-odin-s-celtic-raven-vector-illustration-of-scandinavian-myths-scandinavian-tattoo-runic-symbols-2275435819.jpg
+  carrierLogo: https://www.depepi.com/wp-content/uploads/2017/12/loki-odin-s-ravens-depepi.com-2-e1514661175333.jpg
   adminMailing:
     addressLine1: 1234 Main street
     addressLine2: po box 123
@@ -63,42 +63,4 @@ commissions:
 supplies:
   howToOrderSupplies: Oder supplies
   contactForOrderingSupplies: Contact for ordering supplies
-companyInformation:
-  carrierLogo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_IJrErMN9PzdQ8Y7zBQBWaWTSQlx9R69wYQ&s
-  adminMailingAddress:
-    addressLine1: 773 MIllers Mills Rd
-  overnightMailingAddress:
-    addressLine1: 773 MIllers Mills Rd
-    addressLine2: ""
-  brokerSupport:
-    phone: "7163532526"
-    email: odinshealth@gmail.com
-    fax: "8726387263"
-  newBusiness:
-    phone: "2342342342"
-    email: test@gmail.com
-    fax: "23423423423"
-  policyOwnerServices:
-    phone: "23423423424"
-    email: email@test.com
-    fax: "2389728934723"
-  producerPortal: portal.producer.link.com
-certificationInformation:
-  retrieveUsernameAndPassword: "We will email you. "
-  contactCarrierCornfirmCert: Submit and email
-  CostEquivalentProviderTraining: $300.34
-  certReferenceMaterials: Materials available
-  equivalentProviderTrainingComplianceCredit: Yes
-  areAdditionalStepsRequired: Yes
-  certStartDate: 30.07.2024T12:31
-  agentDeadlineRenewalCommissions: No
-  faceToFaceTrainingRequired: Yes
-  certificationComplianceModules: Some modules
-  certificationProductModules: CERTIFICATION PRODUCT MODULES
-  productInstructions: "This is the section for instructions. "
-  equivalentProviderTrainingRequired: No
-  carrierReimburseEquivalentProviderTraining: Yes
-  certifyingToSellProducts: Yes
-  agentDeadline: No
-  certLink: cert.link.gov
 ---

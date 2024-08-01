@@ -8,6 +8,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'carriers'>['data'];
 
 const { frontmatter } = Astro.props;
+const companyInfo = frontmatter.companyInfo;
+const certInfo = frontmatter.certInfo;
+const submittingBusiness = frontmatter.submittingBusiness;
+const commissions = frontmatter.commissions;
+const supplies = frontmatter.supplies;
+
 console.log(frontmatter)
 ---
 
@@ -38,6 +44,15 @@ console.log(frontmatter)
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
+
+			h2 {
+				font-size: 2rem;
+				margin-block: 1.5rem 1rem; 
+			}
+			h3 {
+				font-size: 1.5rem;
+				margin-bottom: 0;
+			}
 			.carrier-info + .carrier-info {
 				margin-top: 1rem;
 			}
@@ -55,7 +70,7 @@ console.log(frontmatter)
 		<main>
 			<article>
 				<div class="hero-image">
-					{frontmatter.companyInformation.carrierLogo && <img src={frontmatter.companyInformation.carrierLogo} alt="" />}
+					{companyInfo.carrierLogo && <img src={companyInfo.carrierLogo} alt="" />}
 				</div>
 				<div>
 					<div class="title">
@@ -65,52 +80,242 @@ console.log(frontmatter)
 						<h2>Company Information</h2>
 						<div class="carrier-info">
 							<h3>Administrative Office Mailing Address</h3>
-							<p>{frontmatter.companyInformation.adminMailingAddress.addressLine1}</p>
-							{frontmatter.companyInformation.adminMailingAddress.addressLine2 && (
-								<p>{frontmatter.companyInformation.adminMailingAddress.addressLine2}</p>
+							<p>{companyInfo.adminMailing.addressLine1}</p>
+							{companyInfo.adminMailing.addressLine2 && (
+								<p>{companyInfo.adminMailing.addressLine2}</p>
 							)}
 						</div>
 						<div class="carrier-info">
 							<h3>Overnight Mailing Address</h3>
-							<p>{frontmatter.companyInformation.overnightMailingAddress.addressLine1}</p>
-							{frontmatter.companyInformation.overnightMailingAddress.addressLine2 && (
-								<p>{frontmatter.companyInformation.overnightMailingAddress.addressLine2}</p>
+							<p>{companyInfo.overnightMailing.addressLine1}</p>
+							{companyInfo.overnightMailing.addressLine2 && (
+								<p>{companyInfo.overnightMailing.addressLine2}</p>
 							)}
 						</div>
 						<div class="carrier-info">
 							<h3>Broker Support</h3>
 							<p>
-								<strong>Phone: </strong>{frontmatter.companyInformation.brokerSupport.phone}
+								<strong>Phone: </strong>{companyInfo.brokerSupport.phone}
 							</p>
 							<p>
-								<strong>Email: </strong>{frontmatter.companyInformation.brokerSupport.email}
+								<strong>Email: </strong>{companyInfo.brokerSupport.email}
 							</p>
 							<p>
-								<strong>Fax: </strong>{frontmatter.companyInformation.brokerSupport.fax}
+								<strong>Fax: </strong>{companyInfo.brokerSupport.fax}
 							</p>
 						</div>
 						<div class="carrier-info">
 							<h3>New Business</h3>
 							<p>
-								<strong>Phone: </strong>{frontmatter.companyInformation.newBusiness.phone}
+								<strong>Phone: </strong>{companyInfo.newBusiness.phone}
 							</p>
 							<p>
-								<strong>Email: </strong>{frontmatter.companyInformation.newBusiness.email}
+								<strong>Email: </strong>{companyInfo.newBusiness.email}
 							</p>
 							<p>
-								<strong>Fax: </strong>{frontmatter.companyInformation.newBusiness.fax}
+								<strong>Fax: </strong>{companyInfo.newBusiness.fax}
 							</p>
 						</div>
 						<div class="carrier-info">
 							<h3>[Policyowner Services/Member Services/Customer Service]:</h3>
 							<p>
-								<strong>Phone: </strong>{frontmatter.companyInformation.policyOwnerServices.phone}
+								<strong>Phone: </strong>{companyInfo.policyOwnerServices.phone}
 							</p>
 							<p>
-								<strong>Email: </strong>{frontmatter.companyInformation.policyOwnerServices.email}
+								<strong>Email: </strong>{companyInfo.policyOwnerServices.email}
 							</p>
 							<p>
-								<strong>Fax: </strong>{frontmatter.companyInformation.policyOwnerServices.fax}
+								<strong>Fax: </strong>{companyInfo.policyOwnerServices.fax}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Producer Portal:</h3>
+							<p>
+								<strong>Link: </strong>{companyInfo.producerPortal}
+							</p>
+						</div>
+						<h2>Certification Information</h2>
+						<div class="carrier-info">
+							<h3>Instructions for the Following Products:</h3>
+							<p>
+								{certInfo.productInstructions}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Certification Start Date:</h3>
+							<p>
+								{certInfo.certStartDate}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Is there a Deadline to Complete Certifications for New Agents?:</h3>
+							<p>
+								{certInfo.agentDeadline}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Is there a Deadline to Complete Certifications for Current Agents to Receive Renewal Commissions?:</h3>
+							<p>
+								{certInfo.agentDeadlineRenewal}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Certification Link:</h3>
+							<p>
+								{certInfo.certLink}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Certification Reference Materials Available:</h3>
+							<p>
+								{certInfo.certReferenceMaterials}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Is AHIP or Other Equivalent Provider Training Required?</h3>
+							<p>
+								{certInfo.providerTrainingRequired}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>What is the Cost of AHIP or Other Equivalent Provider Training?</h3>
+							<p>
+								{certInfo.providerTrainingCost}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Does Carrier Reimburse for AHIP or Other Equivalent Provider Training?</h3>
+							<p>
+								{certInfo.providerTrainingReimburse}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Can AHIP or Other Equivalent Provider Training Be Used for Compliance Credit?</h3>
+							<p>
+								{certInfo.providerTrainingComplianceCredit}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Certification Compliance Modules:</h3>
+							<p>
+								{certInfo.certComplianceModules}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Certification Product Modules</h3>
+							<p>
+								{certInfo.certProductModules}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Is Face-to-Face Training Required?</h3>
+							<p>
+								{certInfo.faceToFaceTrainingRequired}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Will Certifying for [Upcoming Certification Year] Allow Me to Sell [Previous Certification Year] Products?</h3>
+							<p>
+								{certInfo.certifyingToSellProducts}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Are Additional Steps Required for Those Certifying for the First Time Versus Those Who Are Recertifying?</h3>
+							<p>
+								{certInfo.additionalStepsRequired}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>How Do I Retrieve My Username and Password?</h3>
+							<p>
+								{certInfo.retrieveUsernameAndPassword}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Who Do I Contact at Carrier to Confirm Certification?</h3>
+							<p>
+								{certInfo.contactCarrierCornfirmCert}
+							</p>
+						</div>
+						<h2>Submitting Business</h2>
+						<div class="carrier-info">
+							<h3>Important Information:</h3>
+							<p>
+								{submittingBusiness.importantInfo}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>How to Submit Business with [Carrier Name]:</h3>
+							<p>
+								{submittingBusiness.howToSubmitBusiness}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Paper Applications</h3>
+							<p>
+								<strong>Fax Number:</strong>
+								{submittingBusiness.paperApps.faxNumber}
+							</p>
+							<p>
+								<strong>Mailing Address:</strong>
+								{submittingBusiness.paperApps.mailingAddress}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Online Enrollments</h3>
+							<p>
+								<strong>Website</strong>
+								{submittingBusiness.onlineEnrollments.website}
+							</p>
+							{submittingBusiness.onlineEnrollments.otherInfo && (
+								<p>
+									<strong>Other Information</strong>
+									{submittingBusiness.onlineEnrollments.otherInfo}
+								</p>
+							)}
+							{submittingBusiness.onlineEnrollments.otherInfo2 && (
+								<p>
+									<strong>Other Information</strong>
+									{submittingBusiness.onlineEnrollments.otherInfo2}
+								</p>
+							)}
+						</div>
+						<div class="carrier-info">
+							<h3>Contact for Submitting Business Inquiries</h3>
+							<p>
+								{submittingBusiness.contactForSubmittingBusinessInquiries}
+							</p>
+						</div>
+						<h2>Commissions</h2>
+						<div class="carrier-info">
+							<h3>General Information:</h3>
+							<p>
+								{commissions.generalInfo}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>How to Access [Carrier Name] Commission Statements Online:</h3>
+							<p>
+								{commissions.accessCommissionStatesmentsOnline}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Contact for Commission-Related Inquiries:</h3>
+							<p>
+								{commissions.contactForCommissionRelatedInquiries}
+							</p>
+						</div>
+						<h2>Supplies</h2>
+						<div class="carrier-info">
+							<h3>How to Order Supplies for [Carrier Name]:</h3>
+							<p>
+								{supplies.howToOrderSupplies}
+							</p>
+						</div>
+						<div class="carrier-info">
+							<h3>Contact for Ordering Supplies Inquiries:</h3>
+							<p>
+								{supplies.contactForOrderingSupplies}
 							</p>
 						</div>
 					</section>
